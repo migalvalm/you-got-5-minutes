@@ -14,6 +14,12 @@ config/name="YouGot5Minutes"
 config/features=PackedStringArray("4.0", "Vulkan Clustered")
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalState="*res://singletones/scenes/helpers/Globals.tscn"
+SoundPlayer="*res://singletones/scenes/sound/sound_player.tscn"
+UIHelper="*res://singletones/scenes/ui/UI_helper.tscn"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
