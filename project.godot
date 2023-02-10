@@ -6,20 +6,21 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=5
+config_version=4
 
 [application]
 
-config/name="YouGot5Minutes"
-config/features=PackedStringArray("4.0", "Vulkan Clustered")
+config/name="You Got 5 Minutes"
 config/icon="res://icon.png"
 
-[autoload]
+[gui]
 
-GlobalState="*res://singletones/scenes/helpers/Globals.tscn"
-SoundPlayer="*res://singletones/scenes/sound/sound_player.tscn"
-UIHelper="*res://singletones/scenes/ui/UI_helper.tscn"
+common/drop_mouse_on_gui_input_disabled=true
+
+[physics]
+
+common/enable_pause_aware_picking=true
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
+environment/default_environment="res://default_env.tres"

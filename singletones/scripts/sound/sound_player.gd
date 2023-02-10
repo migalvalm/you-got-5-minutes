@@ -1,6 +1,6 @@
 extends Node
 
-onready var audioPlayers = get_node("AudioPlayers")
+@onready var audioPlayers = get_node("AudioPlayers")
 
 enum types {
 	WAV,
