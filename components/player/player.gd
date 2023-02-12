@@ -2,6 +2,7 @@ extends KinematicBody2D
 class_name Player
 
 # Custom-State Variables
+export(int) var SPEED_UP = 2000
 export(int) var SPEED = 100
 
 # Runtime-State Variables
@@ -12,8 +13,13 @@ enum states {
 	WALK,
 }
 
-func _physics_process(_delta: float) -> void:
-	speed_velocity = move_and_slide(velocity.normalized() * SPEED)
+func _physics_process(delta: float) -> void:
+	velocity = move_and_slide(
+		PlayerLibrary.apply_4_directions_movement(
+			velocity,
+			SPEED,
+			SPEED_UP,
+			delta
+		)
+	)
 
-func _input(_event: InputEvent) -> void:
-	velocity = PL.get_4_directions_input()
