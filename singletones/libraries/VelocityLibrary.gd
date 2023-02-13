@@ -1,4 +1,4 @@
-### Player Generic Functions Library
+### Velocity Pure Functions
 extends Node2D
 
 func apply_4_directions_movement(velocity, max_speed, speed_up, delta) -> Vector2:
