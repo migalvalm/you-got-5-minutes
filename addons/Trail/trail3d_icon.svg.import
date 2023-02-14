@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/colored_tilemap_packed.png-594548c485d9ef99c1e3d33f6f1794d1.stex"
+path="res://.import/trail3d_icon.svg-60360d95e003e9f2e157d4d86537e5fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tilemaps/colored_tilemap_packed.png"
-dest_files=[ "res://.import/colored_tilemap_packed.png-594548c485d9ef99c1e3d33f6f1794d1.stex" ]
+source_file="res://addons/Trail/trail3d_icon.svg"
+dest_files=[ "res://.import/trail3d_icon.svg-60360d95e003e9f2e157d4d86537e5fd.stex" ]
 
 [params]
 
