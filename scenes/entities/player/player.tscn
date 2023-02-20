@@ -7,7 +7,11 @@
 extents = Vector2( 4, 4 )
 
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
 script = ExtResource( 1 )
+CAMERA_ZOOM = Vector2( 1, 1 )
+SPEED = 500
+MAX_SPEED = 50
 
 [node name="Texture" type="Node2D" parent="."]
 z_index = 2
@@ -20,8 +24,5 @@ region_rect = Rect2( 36, 0, 8, 8 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.2, 1.2 )
-smoothing_enabled = true
-smoothing_speed = 2.0

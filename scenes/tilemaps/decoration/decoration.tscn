@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/tilemaps/decoration/decoration.tres" type="TileSet" id=1]
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends TileMap
+
+export(Array) var TILES_ID = [2,3,4,5]
+export(int) var AMOUNT = 8
+"
+
+[node name="Decoration" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 8, 8 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+script = SubResource( 2 )

@@ -7,12 +7,12 @@ func apply_4_directions_movement(velocity, max_speed, speed_up, delta) -> Vector
 	if velocity_axis == Vector2.ZERO:
 		return apply_friction(
 			velocity_axis,
-			speed_up * delta
+			speed_up
 		)
 	else:
 		return apply_movement(
 			velocity, 
-			velocity_axis * speed_up * delta,
+			velocity_axis * speed_up,
 			max_speed
 		)
 
