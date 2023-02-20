@@ -50,7 +50,7 @@ static func place_walls(width, height, tilemap):
 func random_spawn_position(width: int, height: int) -> Vector2:
 	var random_pos: Vector2 = Vector2(randi() % width, -(randi() % width))
 	
-	if decoration_list.has(random_pos): random_spawn_position(width, height)
+	if decoration_list.has(random_pos): return random_spawn_position(width, height)
 	else:
 		decoration_list.push_back(random_pos)
 	
