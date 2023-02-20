@@ -1,3 +1,3 @@
 extends TileMap
 
-export(Array) var FLOOR_TILES = [0]
+export(Array) var TILES_ID = [0]

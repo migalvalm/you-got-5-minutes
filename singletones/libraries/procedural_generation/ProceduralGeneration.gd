@@ -12,7 +12,7 @@ func generate_room(tile_floor, tile_wall, tile_decoration, width: int, height: i
 func generate_floor_tile(tilemap, width: int, height: int) -> void:
 	for x in width:
 		for y in height:
-			place_cell(x, y, tilemap.FLOOR_TILES, tilemap)
+			place_cell(x, y, tilemap.TILES_ID, tilemap)
 
 func generate_wall_tile(tilemap, width: int, height: int) -> void:
 	randomize()
@@ -25,8 +25,7 @@ func generate_decoration_tile(tilemap, width:int, height:int) -> void:
 	
 	for decoration in tilemap.AMOUNT:
 		var random_pos: Vector2 = random_spawn_position(height, width)
-				
-		tilemap.set_cell(random_pos.x, -random_pos.y, tilemap.TILES_ID[randi() % tilemap.TILES_ID.size()])
+		place_cell(random_pos.x, -random_pos.y, tilemap.TILES_ID, tilemap)
 
 ## Procedural Wall Generation Helpers
 func place_corners(width, height, tilemap):
