@@ -15,6 +15,7 @@ height = 16
 
 [node name="Decoration" parent="." instance=ExtResource( 2 )]
 z_index = -1
+AMOUNT = 64
 
 [node name="Floor" parent="." instance=ExtResource( 1 )]
 z_index = -2
