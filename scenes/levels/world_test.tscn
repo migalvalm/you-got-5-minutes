@@ -11,15 +11,29 @@ script = ExtResource( 3 )
 width = 16
 height = 16
 
-[node name="Walls" parent="." instance=ExtResource( 5 )]
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Decoration" parent="." instance=ExtResource( 2 )]
-z_index = -1
-AMOUNT = 64
-
-[node name="Floor" parent="." instance=ExtResource( 1 )]
+[node name="Floor" parent="YSort" instance=ExtResource( 1 )]
+unique_name_in_owner = true
 z_index = -2
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 33, 24 )
+[node name="FloorDecoration" parent="YSort" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+z_index = -2
+TILES_ID = [ 6 ]
+AMOUNT = 16
+
+[node name="Walls" parent="YSort" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+z_index = -1
+
+[node name="Player" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 75, 40 )
 CAMERA_ZOOM = Vector2( 0.8, 0.8 )
+
+[node name="Decoration" parent="YSort" instance=ExtResource( 2 )]
+unique_name_in_owner = true
+z_index = 1
+z_as_relative = false
+TILES_ID = [ 2, 3, 5 ]
+AMOUNT = 16

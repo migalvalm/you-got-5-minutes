@@ -1,28 +1,35 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/entities/player/player.gd" type="Script" id=1]
 [ext_resource path="res://assets/Graphics/tilemaps/colored_tilemap.png" type="Texture" id=2]
+[ext_resource path="res://components/WeaponWheel/weapon_wheel.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 4, 4 )
+extents = Vector2( 2, 3.9964 )
 
 [node name="Player" type="KinematicBody2D"]
+scale = Vector2( 0.5, 0.5 )
 collision_layer = 2
 script = ExtResource( 1 )
 CAMERA_ZOOM = Vector2( 1, 1 )
 SPEED = 500
 MAX_SPEED = 50
 
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 0.00360489 )
+shape = SubResource( 1 )
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+
 [node name="Texture" type="Node2D" parent="."]
-z_index = 2
 
 [node name="Sprite" type="Sprite" parent="Texture"]
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 36, 0, 8, 8 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="Components" type="Node2D" parent="."]
 
-[node name="Camera" type="Camera2D" parent="."]
-current = true
+[node name="WeaponWheel" parent="Components" instance=ExtResource( 3 )]
+player = NodePath("../..")

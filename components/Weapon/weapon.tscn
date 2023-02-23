@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://components/Weapon/weapon.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("MainTexture:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("MainTexture:flip_v")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[node name="Weapon" type="Node2D" groups=["Weapon"]]
+script = ExtResource( 2 )
+
+[node name="SlashEffect" type="Sprite" parent="."]
+
+[node name="MainTexture" type="Sprite" parent="."]
+scale = Vector2( 0.8, 0.8 )
+region_rect = Rect2( 48, 32, 8, 8 )
+
+[node name="Hitbox" type="Area2D" parent="."]
+position = Vector2( 0.8, 0 )
+scale = Vector2( 0.8, 0.8 )
+collision_layer = 0
+collision_mask = 5
+
+[node name="Collision" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 1.5, 0 )
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
