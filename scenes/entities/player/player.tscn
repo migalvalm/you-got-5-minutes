@@ -8,10 +8,9 @@
 extents = Vector2( 2, 3.9964 )
 
 [node name="Player" type="KinematicBody2D"]
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.4969, 0.490571 )
 collision_layer = 2
 script = ExtResource( 1 )
-CAMERA_ZOOM = Vector2( 1, 1 )
 SPEED = 500
 MAX_SPEED = 50
 

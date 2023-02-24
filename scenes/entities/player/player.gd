@@ -4,10 +4,10 @@ class_name Player
 # Child Nodes
 onready var CAMERA: Camera2D = get_node("Camera")
 
-# Player Camera Variables - 16x16 Default
-export (int) var CAMERA_WIDTH = 16
-export (int) var CAMERA_HEIGHT = 16
-export (Vector2) var CAMERA_ZOOM = Vector2(0.8, 0.8)
+# Camera Variables - 16x16 Default
+export (int) var CAMERA_WIDTH = 8
+export (int) var CAMERA_HEIGHT = 8
+export (Vector2) var CAMERA_ZOOM = Vector2(1, 1)
 
 # Custom-State Variables
 export(int) var SPEED = 700
@@ -18,7 +18,7 @@ var velocity: Vector2
 var camera: Camera2D
 
 func _ready():
-	set_player_camera()
+	set_camera()
 
 func _physics_process(delta: float) -> void:
 	process_movement(delta)
@@ -33,7 +33,7 @@ func process_movement(delta: float) -> void:
 		)
 	)
 
-func set_player_camera() -> void:
+func set_camera() -> void:
 	CAMERA.limit_left = 0
 	CAMERA.limit_top = 0
 	CAMERA.limit_right = 8 * CAMERA_WIDTH + 8

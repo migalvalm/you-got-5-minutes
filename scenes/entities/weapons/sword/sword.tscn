@@ -4,10 +4,6 @@
 [ext_resource path="res://scenes/entities/weapons/sword/sword.gd" type="Script" id=2]
 [ext_resource path="res://assets/Graphics/effects/slash_effect_anim_spritesheet.png" type="Texture" id=3]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 5.0
-height = 0.0
-
 [sub_resource type="Animation" id=3]
 length = 0.001
 tracks/0/type = "value"
@@ -87,7 +83,13 @@ tracks/3/keys = {
 "values": [ true, false ]
 }
 
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 5.0
+height = 0.0
+
 [node name="Sword" type="Node2D" groups=["Weapon"]]
+z_index = 10
+z_as_relative = false
 script = ExtResource( 2 )
 weapon_speed = 1
 
@@ -105,19 +107,18 @@ texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 48, 32, 8, 8 )
 
-[node name="Hitbox" type="Area2D" parent="."]
-position = Vector2( 0.8, 0 )
-scale = Vector2( 0.8, 0.8 )
-collision_layer = 0
-collision_mask = 5
-
-[node name="Collision" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2( 1.5, 0 )
-shape = SubResource( 1 )
-disabled = true
-
 [node name="Animation" type="AnimationPlayer" parent="."]
 anims/RESET = SubResource( 3 )
 anims/attack = SubResource( 2 )
 
-[connection signal="body_entered" from="Hitbox" to="." method="on_hit"]
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+
+[node name="Collision" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2( 2, 0 )
+scale = Vector2( 0.8, 0.8 )
+shape = SubResource( 1 )
+disabled = true
+
+[connection signal="area_entered" from="Hitbox" to="." method="on_hit"]

@@ -1,4 +1,5 @@
 extends Node
+class_name ProceduralGeneration
 
 var floor_decoration_list: Array
 var decoration_list: Array
@@ -20,13 +21,12 @@ static func generate_floor_tile(tilemap, width: int, height: int) -> void:
 	for x in width:
 		for y in height:
 			place_cell(x, y, tilemap.TILES_ID, tilemap)
-			
 
 func generate_floor_decoration_tile(tilemap, width: int, height: int) -> void:
 	for decoration in tilemap.AMOUNT:
 		var random_pos: Vector2 = random_spawn_position(height, width, floor_decoration_list)
 		place_cell(int(random_pos.x), -int(random_pos.y), tilemap.TILES_ID, tilemap)
-		
+
 func generate_wall_tile(tilemap, width: int, height: int) -> void:
 	randomize()
 
@@ -84,4 +84,4 @@ static func place_cell(x: int, y: int, tiles: Array, tilemap) -> void:
 	tilemap.set_cell(x, y, tiles[randi() % tiles.size()])
 
 func check_cell(pos, target_list: Array) -> bool:
-	return corner_list.has(pos)  || wall_list.has(pos) || target_list.has(pos)
+	return corner_list.has(pos) || wall_list.has(pos) || target_list.has(pos)

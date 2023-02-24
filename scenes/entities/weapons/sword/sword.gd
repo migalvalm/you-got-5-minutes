@@ -14,7 +14,6 @@ func process_mouse_click(mouse_event):
 				animation.play("attack")
 		BUTTON_RIGHT:
 			print("block")
-			#todo
 
-func on_hit(body: Node) -> void:
-	print(body.name)
+func on_hit(area: Area2D) -> void:
+	area.get_parent().damage(weapon_damage)

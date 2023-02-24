@@ -1,12 +1,3 @@
-"""
-Author: Oussama BOUKHELF
-License: MIT
-Version: 0.1
-Email: o.boukhelf@gmail.com
-Description: Advanced 2D/3D Trail system.
-Note: This is a simple implementation, I will update it later on.
-"""
-
 extends Line2D
 
 
@@ -67,11 +58,11 @@ func update_points() -> void:
 	for point in trail_points:
 		point.update(delta, trail_points)
 		
-	if point: add_point(point.position)
+		if point:
+			add_point(point.position)
 	
 
 func _process(delta):
 	if emit:
 		_emit()
-
-
+		
