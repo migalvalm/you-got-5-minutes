@@ -17,9 +17,9 @@ z_index = -2
 
 [node name="FloorDecoration" parent="." instance=ExtResource( 2 )]
 unique_name_in_owner = true
+scale = Vector2( 0.5, 0.5 )
 z_index = -2
 TILES_ID = [ 6 ]
-AMOUNT = 10
 
 [node name="Walls" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
@@ -30,4 +30,4 @@ unique_name_in_owner = true
 z_index = 1
 z_as_relative = false
 TILES_ID = [ 2, 3, 5 ]
-AMOUNT = 7
+AMOUNT = 10

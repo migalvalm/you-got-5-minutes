@@ -11,11 +11,12 @@ export(int) var enemy_count: int = 20
 
 # Runtime Instances
 onready var enemy_spawner: EnemySpawner = EnemySpawner.new(enemy_count)
+onready var procedural_generator: ProceduralGeneration = ProceduralGeneration.new()
 
 func _ready() -> void:
 	PlayerStore.spawn_player(self, tile_wall)
 	
-	ProceduralGeneration.new().generate_room(
+	procedural_generator.generate_room(
 		tile_floor,
 		tile_wall,
 		tile_decoration,
