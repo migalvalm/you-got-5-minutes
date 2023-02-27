@@ -23,12 +23,12 @@ func _physics_process(delta: float) -> void:
 	
 	if player_ref and is_alive():
 		var velocity = global_position.direction_to(player_ref.global_position)
-		move_and_collide(velocity * SPEED * delta)
+		var _movement = move_and_collide(velocity * SPEED * delta)
 
 func damage(value) -> void:
 	if can_hit and player_ref:
 		health -= value
-		move_and_collide((get_global_mouse_position() - player_ref.global_position).normalized() * value)
+		var _bounce_back = move_and_collide((get_global_mouse_position() - player_ref.global_position).normalized() * value)
 		
 		if health <= 0:
 			die()

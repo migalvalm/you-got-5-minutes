@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "YSort",
+"class": "BaseRoom",
+"language": "GDScript",
+"path": "res://scenes/levels/room.gd"
+}, {
+"base": "EditorPlugin",
+"class": "BeautifierAPI",
+"language": "GDScript",
+"path": "res://addons/godot_beautifier/src/apis.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Enemy",
 "language": "GDScript",
@@ -17,7 +27,12 @@ _global_script_classes=[ {
 "base": "Node2D",
 "class": "EnemySpawner",
 "language": "GDScript",
-"path": "res://singletones/libraries/enemy_spawner/enemy_spawner.gd"
+"path": "res://components/Spawner/enemy_spawner.gd"
+}, {
+"base": "Reference",
+"class": "JSONBeautifier",
+"language": "GDScript",
+"path": "res://addons/json_beautifier/json_beautifier.gd"
 }, {
 "base": "KinematicBody2D",
 "class": "Player",
@@ -27,7 +42,7 @@ _global_script_classes=[ {
 "base": "Node",
 "class": "ProceduralGeneration",
 "language": "GDScript",
-"path": "res://singletones/libraries/procedural_generation/ProceduralGeneration.gd"
+"path": "res://singletones/ProceduralGeneration/procedural_generation.gd"
 }, {
 "base": "Weapon",
 "class": "Sword",
@@ -35,31 +50,47 @@ _global_script_classes=[ {
 "path": "res://scenes/entities/weapons/sword/sword.gd"
 }, {
 "base": "Node2D",
+"class": "VelocityLibrary",
+"language": "GDScript",
+"path": "res://singletones/VelocityLibrary/VelocityLibrary.gd"
+}, {
+"base": "Node2D",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://components/Weapon/weapon.gd"
+"path": "res://components/Weapon/melee_weapon.gd"
 } ]
 _global_script_class_icons={
+"BaseRoom": "",
+"BeautifierAPI": "",
 "Enemy": "",
 "EnemySpawner": "",
+"JSONBeautifier": "",
 "Player": "",
 "ProceduralGeneration": "",
 "Sword": "",
+"VelocityLibrary": "",
 "Weapon": ""
 }
 
 [application]
 
 config/name="You Got 5 Minutes"
-run/main_scene="res://scenes/levels/world_test.tscn"
+run/main_scene="res://main.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Globals="*res://singletones/helpers/globals.gd"
-GameStore="*res://singletones/store/GameStore/game_store.tscn"
-PlayerStore="*res://singletones/store/PlayerStore/player_store.tscn"
-VelocityLibrary="*res://singletones/libraries/velocity_library/VelocityLibrary.tscn"
+SceneManager="*res://singletones/SceneManager/scene_manager.gd"
+Globals="*res://singletones/Globals/globals.gd"
+PlayerStore="*res://singletones/PlayerStore/player_store.tscn"
+GameController="*res://singletones/GameController/game_controller.tscn"
+
+[beautifier]
+
+theme_script="res://addons/godot_beautifier/themes/Cool Black/theme.gd"
+default_settings={
+"rendering/environment/default_clear_color": Color( 0.121569, 0.12549, 0.129412, 1 )
+}
 
 [display]
 
@@ -73,7 +104,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray(  )
+enabled=PoolStringArray( "res://addons/godot_beautifier/plugin.cfg" )
 
 [global]
 
@@ -154,5 +185,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.121569, 0.12549, 0.129412, 1 )
+environment/default_clear_color=Color( 0.12549, 0.12549, 0.12549, 1 )
 environment/default_environment="res://default_env.tres"
