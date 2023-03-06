@@ -87,7 +87,7 @@ GameController="*res://singletones/GameController/game_controller.tscn"
 
 [beautifier]
 
-theme_script="res://addons/godot_beautifier/themes/Cool Black/theme.gd"
+theme_script="res://addons/godot_beautifier/themes/Tokyo Night/theme.gd"
 default_settings={
 "rendering/environment/default_clear_color": Color( 0.121569, 0.12549, 0.129412, 1 )
 }
@@ -185,5 +185,5 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.12549, 0.12549, 0.12549, 1 )
+environment/default_clear_color=Color( 0.101961, 0.105882, 0.14902, 1 )
 environment/default_environment="res://default_env.tres"

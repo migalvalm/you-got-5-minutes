@@ -17,7 +17,6 @@ func _init(
 
 	randomize()
 	
-	
 	batch_size = _batch_size
 	batch_spawn_rate = _batch_spawn_rate
 	enemy_list = _enemy_list
@@ -25,10 +24,10 @@ func _init(
 func _physics_process(delta: float) -> void:
 	if timer.is_stopped(): timer.start(batch_spawn_rate)
 
-func spawn_batch(batch_size: int) -> void:
+func spawn_batch() -> void:
 	var batch_locations: Array = []
 
-	for i in range(batch_size):
+	for _i in range(batch_size):
 		var random_pos = generate_random_position(batch_locations)
 		batch_locations.push_back(random_pos)
 	
@@ -56,4 +55,4 @@ func generate_random_position(batch_locations) -> Vector2:
 
 
 func on_timeout() -> void:
-	spawn_batch(batch_size)
+	spawn_batch()
