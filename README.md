@@ -1,5 +1,8 @@
+### Currently learning GDScript 2.0 and Godot 4.0 so I can update this project to a more recent version of Godot!
+
 ## Dependencies
 - ### Godot 3.5
+- ### GDScript 1.0
 
 ## Generated Theme
 
